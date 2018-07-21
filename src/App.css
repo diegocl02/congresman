@@ -1,0 +1,24 @@
+html,body {
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
+body {
+    width:100%;
+    background-color: #EAEDED;
+}
+
+/*@@font-face {
+  font-family: celticfont;
+  src: url('./img/CelticHand.ttf');
+  src: url('./img/CelticHand.woff');
+}*/
+
+.title{
+  /*font-family: celticfont;*/
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  background-color: "light-blue"
+}
