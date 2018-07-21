@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 const store = createStore(
   reducer,
-  createEmptyAppState()
+  // createEmptyAppState()
 );
 
 function appStateToProps(state) {

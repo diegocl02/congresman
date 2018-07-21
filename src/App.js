@@ -1,6 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import './App.css';
+import * as Icons from './icons/icons'
 
 class App extends Component {
 
@@ -11,8 +12,9 @@ class App extends Component {
 
   render() {
     return (
-      <div classname="title"> 
+      <div className="title"> 
         <h1> CongresMan is in da house </h1>
+        <div style={{height: "50%", width: "50%"}}> {Icons.CongresMan()} </div>
       </div>
     )
   }
