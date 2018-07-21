@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 957898fcee3ac0883e2d3898bb44169016a1dc6d
 # Logs
 logs
 *.log
@@ -60,4 +63,8 @@ typings/
 .env
 
 # next.js build output
+<<<<<<< HEAD
 .next
+=======
+.next
+>>>>>>> 957898fcee3ac0883e2d3898bb44169016a1dc6d
