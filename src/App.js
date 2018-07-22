@@ -8,6 +8,7 @@ import {
   Link
 } from 'react-router-dom'
 import ProjectList from './pages/project-list'
+import MyWordCloud from './pages/wordcloud'
 
 const ToolBar = (props) => {
   return (<div style={{ display: "flex", flexDirection: "row", alignItems: "start" }}>
@@ -48,6 +49,7 @@ const CommentsPage = (props) => {
   return (
     <div className="rbody">
       <ToolBar />
+      <MyWordCloud {...props}/>
     </div>)
 }
 
