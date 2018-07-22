@@ -17,9 +17,15 @@
     "path": "^0.12.7",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+<<<<<<< HEAD
     "react-fusioncharts": "^1.0.5",
+=======
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+>>>>>>> 6ee9d37d05cf4301e8ac0d9a5530bfc246d0fe68
     "react-scripts": "1.0.13",
     "react-simple-dropdown": "^3.2.0",
+    "react-spinners": "^0.3.2",
     "redux": "^3.7.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",

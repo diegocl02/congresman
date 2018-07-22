@@ -14,13 +14,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname ,'static/index.html'));
 })
 
-app.get('/about', function (req, res) {
-  res.sendFile(path.join(__dirname,  'static/about.html'));
-})
+// app.get('/about', function (req, res) {
+//   res.sendFile(path.join(__dirname,  'static/about.html'));
+// })
 
-app.get('/test', function (req, res) {
-  res.sendFile(path.join(__dirname,  'jade/test.html'));
-})
+// app.get('/test', function (req, res) {
+//   res.sendFile(path.join(__dirname,  'jade/test.html'));
+// })
 
 /////// ENDPOINTS
 
@@ -51,32 +51,27 @@ app.get('/test', function (req, res) {
 
 ////Get list of users
 
-// app.get('/getinitialstate', function (req, res) {
+app.get('/getinitialstate', function (req, res) {
 
-//   const query='select userId userid,u.name name, u.nickname,rt.name rankingName, '+
-//       'u.ranking rankingNumber,gamesWon '+
-//       'from User u '+
-//       'join RankingType rt '+
-//       'where u.ranking between floor and ceil; '
+  const query='select * from projects;'
 
+  const mysql = require('mysql')
+  const connection = mysql.createConnection({
+    host     : 'us-cdbr-iron-east-04.cleardb.net',
+    user     : 'b1c938a2bf779a',
+    password : 'b58fb8dd',
+    database : 'heroku_f1b384e9e343ad5'
+  });
 
-//   const mysql = require('mysql')
-//   const connection = mysql.createConnection({
-//     host     : 'us-cdbr-iron-east-05.cleardb.net',
-//     user     : 'b7cfe3e5b978a2',
-//     password : '1b99fff3',
-//     database : 'heroku_6702d303f45788f'
-//   });
+  connection.connect();
 
-//   connection.connect();
+  connection.query(query, function (err, rows, fields) {
+    connection.destroy();
+    if (err) throw err;
+    res.send(rows);
+  })
 
-//   connection.query(query, function (err, rows, fields) {
-//     connection.destroy();
-//     if (err) throw err;
-//     res.send(rows);
-//   })
-
-// })
+})
 
 
 /// SERVER START WITH node serve.js
