@@ -24,7 +24,7 @@ export default class Home extends React.Component {
                         <img src={Flag} style={{ height: "7em"}} alt="fireSpot" />
                     </div>
                     <h1 style={{ fontVariant: "small-caps", color: "#22264F" }}> Bienvenidos Ciudadanos! </h1>
-                    <h2> Les presentamos a <span style={{ fontVariant: "small-caps", fontWeight: "700" }}>"CongresMan!"</span> el nuevo héroe democrático que te enseñara la importancia de particiar en las
+                    <h2> Les presentamos a <span style={{ fontVariant: "small-caps", fontWeight: "700" }}>"CongresMan!"</span> el nuevo héroe democrático que te enseñará la importancia de particiar en las
                         labores legislativas del congreso. </h2> <br /> <br />
                     <h1>
                         <span style={{ cursor: "pointer" }} onClick={e => { console.log("test") }}> 
