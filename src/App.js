@@ -11,14 +11,20 @@ import ProjectList from './pages/project-list'
 import MyWordCloud from './pages/wordcloud'
 
 const ToolBar = (props) => {
-  return (<div style={{ display: "flex", flexDirection: "row", alignItems: "start" }}>
-    <div style={{fontWeight: "bold", fontVariant: "small-caps", fontSize: "1.2em", paddingRight: "1em"}}>CongresMan</div>
-    <div style={{paddingRight: "1em"}} ><Link to="/">Home</Link></div>
-    <div style={{paddingRight: "1em"}}><Link to="/about">About</Link></div>
-    <div style={{paddingRight: "1em"}}><Link to="/projects">Projects</Link></div>
-    <hr />
-  </div>
-  )
+  return [<div style={{ display: "flex", flexDirection: "row", alignItems: "center", paddingTop: "0.2em" }}>
+    <div style={{ height: "1.5em", width: "1.5em" }}> <Icons.Congress/> </div>
+    <div style={{ height: "1.5em", width: "1.5em" }}> <Icons.CongresMan2/> </div>
+    <div style={{
+      fontWeight: "bold", fontVariant: "small-caps",
+      fontSize: "1.1em", paddingLeft: "0.5em", paddingRight: "2em", 
+    }}>
+      CongresMan</div>
+    <div style={{ paddingRight: "1em" }} ><Link to="/">Inicio</Link></div>
+    <div style={{ paddingRight: "1em" }}><Link to="/projects">Proyectos Legislativos</Link></div>
+    <div style={{ paddingRight: "1em" }}><Link to="/about">Acerca</Link></div>
+  </div>,
+  <hr />  
+  ]
 }
 
 const Home = (props) => {
