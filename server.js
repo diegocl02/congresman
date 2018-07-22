@@ -73,6 +73,28 @@ app.get('/getinitialstate', function (req, res) {
 
 })
 
+app.get('/votesPerAnswer', function (req, res) {
+
+  const query='select vote, count(*) number from poll where projects_id = 13 group by vote;'
+
+  const mysql = require('mysql')
+  const connection = mysql.createConnection({
+    host     : 'us-cdbr-iron-east-04.cleardb.net',
+    user     : 'b1c938a2bf779a',
+    password : 'b58fb8dd',
+    database : 'heroku_f1b384e9e343ad5'
+  });
+
+  connection.connect();
+
+  connection.query(query, function (err, rows, fields) {
+    connection.destroy();
+    if (err) throw err;
+    res.send(rows);
+  })
+
+})
+
 
 /// SERVER START WITH node serve.js
 

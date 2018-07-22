@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import './App.css';
 import * as Icons from './icons/icons'
 import ReactFC from 'react-fusioncharts';
-import { pieChartConfigs } from './components/PieChar.js'
-import { barChartConfigs } from './components/BarChar.js'
+// import { pieChartConfigs } from './components/PieChar.js'
+// import { barChartConfigs } from './components/BarChar.js'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
 import ProjectList from './pages/project-list'
+import Statistics from './pages/Statistics';
 
 const ToolBar = (props) => {
   return (<div style={{ display: "flex", flexDirection: "row", alignItems: "start" }}>
@@ -34,8 +35,7 @@ const Home = (props) => {
 const StatisticsPage = () => {
   return <div className="rbody">
     <ToolBar />
-    <h1> Estadisticas </h1>
-    <div style={{ height: "50%", width: "50%" }}> {Icons.CongresMan()} </div>
+    <Statistics />
   </div>
 }
 
@@ -62,18 +62,6 @@ class App extends Component {
     console.log("project", this.props)
 
     return (
-      <div className="title">
-      <div className="Grid-container"> 
-        <div className="Grid-item">
-          <ReactFC {...pieChartConfigs} />
-        </div>
-        <div className="Grid-item">
-          <ReactFC {...barChartConfigs} />
-        </div>
-      </div>
-        <h1> CongresMan is in da house.adfa </h1>
-        <div style={{height: "50%", width: "50%"}}> {Icons.CongresMan()} </div>
-      </div>
       
       <Router>
         <div style={{ height: "100%", width: "100%" }}>
