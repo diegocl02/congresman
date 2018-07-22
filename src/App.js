@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 import ProjectList from './pages/project-list'
 import MyWordCloud from './pages/wordcloud'
+import Home from './pages/home'
 
 const ToolBar = (props) => {
   return [<div style={{ display: "flex", flexDirection: "row", alignItems: "center", paddingTop: "0.2em" }}>
@@ -21,25 +22,23 @@ const ToolBar = (props) => {
       CongresMan</div>
     <div style={{ paddingRight: "1em" }} ><Link to="/">Inicio</Link></div>
     <div style={{ paddingRight: "1em" }}><Link to="/projects">Proyectos Legislativos</Link></div>
-    <div style={{ paddingRight: "1em" }}><Link to="/about">Acerca</Link></div>
+    <div style={{ paddingRight: "1em" }}><Link to="/">Acerca</Link></div>
   </div>,
   <hr />  
   ]
 }
 
-const Home = (props) => {
+const HomePage = (props) => {
   return <div className="rbody">
     <ToolBar />
-    <h1> Bienvenidos </h1>
-    <div style={{ height: "50%", width: "50%" }}> {Icons.CongresMan()} </div>
+    <Home/>    
   </div>
 }
 
 const StatisticsPage = () => {
   return <div className="rbody">
     <ToolBar />
-    <h1> Estadisticas </h1>
-    <div style={{ height: "50%", width: "50%" }}> {Icons.CongresMan()} </div>
+    <Home/>
   </div>
 }
 
@@ -69,7 +68,7 @@ class App extends Component {
     return (
       <Router>
         <div style={{ height: "100%", width: "100%" }}>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HomePage} />
           <Route path="/projects" render={() => { return <ProjectListPage {...this.props} /> }} />
           <Route path="/statistics" component={StatisticsPage} />
           <Route path="/comments" component={CommentsPage} />

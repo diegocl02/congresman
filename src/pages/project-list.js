@@ -84,7 +84,7 @@ export default class ProjectList extends React.Component {
                                             {row[key]}
                                         </td>
                                     })}
-                                    <td> <div {...iconsProps}><Link to={"/vote"}> <Icons.Vote /></Link> </div></td>                                    
+                                    <td> <div {...iconsProps}><Link to={"/"}> <Icons.Vote /></Link> </div></td>                                    
                                     <td> <div {...iconsProps}> <Link to={"/comments"}> <Icons.Comment /></Link> </div> </td>
                                     <td> <div {...iconsProps}><Link to={"/statistics"}> <Icons.Statistic /></Link> </div></td>                                    
                                 </tr>
