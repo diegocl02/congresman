@@ -22,3 +22,15 @@ body {
   justify-content: "center";
   background-color: "light-blue"
 }
+
+.Grid-container {
+  display: flex;
+  justify-content: center;
+}
+
+.Grid-item {
+  display: flex;
+  justify-content: center;
+  border: solid 1px;
+  width: 500px;
+}
