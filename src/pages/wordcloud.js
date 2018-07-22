@@ -57,6 +57,22 @@ const rawWords = [
   'moral',
   'fujimori',
   'religion',
+  'selva',
+  'iquitos',
+  'extranjero',
+  'persona',
+  'ancash',
+  'loreto',
+  'estados',
+  'trabajadores',
+  'proletario',
+  'partido',
+  'deporte',
+  'medicos',
+  'entretenimiento',
+  'capadidad',
+  'servicio',
+  'basico',
 ];
 
 const WORD_COUNT_KEY = 'value';
