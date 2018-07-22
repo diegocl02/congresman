@@ -2,12 +2,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as Icons from './icons/icons'
+import ReactFC from 'react-fusioncharts';
+// import { pieChartConfigs } from './components/PieChar.js'
+// import { barChartConfigs } from './components/BarChar.js'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
 import ProjectList from './pages/project-list'
+import Statistics from './pages/Statistics';
 import MyWordCloud from './pages/wordcloud'
 import Home from './pages/home'
 
@@ -38,7 +42,7 @@ const HomePage = (props) => {
 const StatisticsPage = () => {
   return <div className="rbody">
     <ToolBar />
-    <Home/>
+    <Statistics />
   </div>
 }
 
@@ -66,6 +70,7 @@ class App extends Component {
     console.log("project", this.props)
 
     return (
+      
       <Router>
         <div style={{ height: "100%", width: "100%" }}>
           <Route exact path="/" component={HomePage} />
