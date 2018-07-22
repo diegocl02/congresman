@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import * as Icons from './icons/icons'
 import ReactFC from 'react-fusioncharts';
-// import { pieChartConfigs } from './components/PieChar.js'
-// import { barChartConfigs } from './components/BarChar.js'
 import {
   BrowserRouter as Router,
   Route,
@@ -17,8 +15,8 @@ import Home from './pages/home'
 
 const ToolBar = (props) => {
   return [<div style={{ display: "flex", flexDirection: "row", alignItems: "center", paddingTop: "0.2em" }}>
-    <div style={{ height: "1.5em", width: "1.5em" }}> <Icons.Congress/> </div>
-    <div style={{ height: "1.5em", width: "1.5em" }}> <Icons.CongresMan2/> </div>
+    <div style={{ height: "2em", width: "2em" }}> <Icons.Congress/> </div>
+    <div style={{ height: "2em", width: "2em" }}> <Icons.CongresMan2/> </div>
     <div style={{
       fontWeight: "bold", fontVariant: "small-caps",
       fontSize: "1.1em", paddingLeft: "0.5em", paddingRight: "2em", 
