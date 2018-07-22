@@ -43,14 +43,18 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 .Grid-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items:center;
 }
 
 .Grid-item {
   display: flex;
   justify-content: center;
+  align-items:center;
   border: solid 1px;
-  width: 500px;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .icons:hover {

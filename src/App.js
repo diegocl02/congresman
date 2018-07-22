@@ -39,10 +39,10 @@ const HomePage = (props) => {
   </div>
 }
 
-const StatisticsPage = () => {
+const StatisticsPage = (props) => {
   return <div className="rbody">
     <ToolBar />
-    <Statistics />
+    <Statistics {...props}/>
   </div>
 }
 
@@ -75,7 +75,7 @@ class App extends Component {
         <div style={{ height: "100%", width: "100%" }}>
           <Route exact path="/" component={HomePage} />
           <Route path="/projects" render={() => { return <ProjectListPage {...this.props} /> }} />
-          <Route path="/statistics" component={StatisticsPage} />
+          <Route path="/statistics" render={() => { return <StatisticsPage {...this.props} />}} />
           <Route path="/comments" component={CommentsPage} />
         </div>
       </Router>

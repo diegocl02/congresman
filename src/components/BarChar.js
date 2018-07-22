@@ -2,7 +2,7 @@
 export const barMyDataSource = {
     chart: {
       caption: 'DISTRIBUCIÓN DEMOGRÁFICA DE VOTOS',
-      subCaption: 'Proyecto de Ley: LEY QUE AUTORIZA EL NOMBRAMIENTO DE LOS MÉDICOS CIRUJANOS CONTRATADOS EN EL MINISTERIO DE DEFENSA, MINISTERIO DEL INTERIOR, MINISTERIO DE JUSTICIA, MINISTERIO PÚBLICO, MINISTERIO DE EDUCACIÓN Y UNIVERSIDADES NACIONALES',
+      subCaption: '',
       numberPrefix: '',
     },
     data: [
@@ -27,8 +27,8 @@ export const barMyDataSource = {
   
   export const barChartConfigs = {
     type: 'column2d',
-    width: 500,
-    height: 400,
+    width: 600,
+    height: 450,
     dataFormat: 'json',
     dataSource: barMyDataSource,
   };

@@ -6,21 +6,24 @@ import { barChartConfigs } from '../components/BarChar.js'
 import { RingLoader } from 'react-spinners';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
+// import { NONAME } from 'dns';
 
 Charts(FusionCharts);
 
 class Statistics extends Component {
-    constructor(props) {
+    constructor(props) { 
         super(props);
+        console.log("is in stat",props)
             this.state = {
                 pro: undefined,
                 cons: undefined,
                 alt: undefined,
+                dataStatistics: props.dataProjects,
             } 
     };
 
     componentDidMount() {
-        if (this.state.data === undefined) {
+        if (this.state.pro === undefined && this.state.cons === undefined) {
             var AjaxPromise = require('ajax-promise');
             AjaxPromise
                 .get('/votesPerAnswer')
@@ -36,7 +39,7 @@ class Statistics extends Component {
 
 
     render() {
-
+        console.log(this.state)
         if (this.state.pro === undefined && this.state.cons === undefined) {
             return (
                 <div style={{ height: "100%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -48,7 +51,7 @@ class Statistics extends Component {
             var pieMyDataSource = {
                 chart: {
                     caption: "NÚMERO DE VOTOS A FAVOR, EN CONTRA Y PROPUESTAS ALTERNATIVAS",
-                    subcaption: "Proyecto de Ley: LEY QUE AUTORIZA EL NOMBRAMIENTO DE LOS MÉDICOS CIRUJANOS CONTRATADOS EN EL MINISTERIO DE DEFENSA, MINISTERIO DEL INTERIOR, MINISTERIO DE JUSTICIA, MINISTERIO PÚBLICO, MINISTERIO DE EDUCACIÓN Y UNIVERSIDADES NACIONALES",
+                    subcaption: "",
                     startingangle: "120",
                     showlabels: "0",
                     showlegend: "1",
@@ -75,21 +78,22 @@ class Statistics extends Component {
                 id: "age-profile-chart",
                 renderAt: "age-profile-chart-container",
                 type: "pie3d",
-                width: 498,
-                height: 400,
+                width: 600,
+                height: 450,
                 dataFormat: "json",
                 dataSource: pieMyDataSource
             };
 
             return (
 
-                <div className="Grid-container"> 
-                <div className="Grid-item">
-                <ReactFC {...pieChartConfigs} />
-                </div>
-                <div className="Grid-item">
-                <ReactFC {...barChartConfigs} />
-                </div>
+                <div className="Grid-container">
+                    <div className="Grid-item" style={{width: '1200px', border: 'none', padding: '3%'}}>
+                        {this.state.dataStatistics[12]["title"]}
+                    </div>
+                    <div className="Grid-item">
+                        <ReactFC {...pieChartConfigs} />
+                        <ReactFC {...barChartConfigs} />
+                    </div>
                 </div>
             )
         }
