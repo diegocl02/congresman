@@ -4,31 +4,83 @@ import ReactWordCloud from 'react-wordcloud';
 
 import {Comments} from './comments.js';
 
-const words = [
-  {word: 'progreso', value: 5},
-  {word: 'mejora', value: 3},
-  {word: 'estancamiento', value: 1},
-  {word: 'importante', value: 3},
-  {word: 'trabajo', value: 1},
-  {word: 'ciudadania', value: 2},
-  {word: 'pais', value: 3},
-  {word: 'resurgimiento', value: 2},
-  {word: 'orgullo', value: 3},
-  {word: 'voluntad', value: 2},
-  {word: 'ciudad', value: 2},
-  {word: 'nacion', value: 2},
-  {word: 'patrimonio', value: 1},
-  {word: 'valor', value: 2},
-  {word: 'metales', value: 2},
-  {word: 'beneficio', value: 1},
-  {word: 'divisas', value: 3},
-  {word: 'motivo', value: 2},
-  {word: 'dolares', value: 3},
-  {word: 'exportando', value: 2},
+const rawWords = [
+  'progreso',
+  'mejora',
+  'estancamiento',
+  'importante',
+  'trabajo',
+  'ciudadania',
+  'pais',
+  'resurgimiento',
+  'orgullo',
+  'voluntad',
+  'ciudad',
+  'nacion',
+  'patrimonio',
+  'valor',
+  'metales',
+  'beneficio',
+  'divisas',
+  'motivo',
+  'dolares',
+  'exportando',
+  'nivel',
+  'apoyo',
+  'congreso',
+  'ley',
+  'injusticia',
+  'justo',
+  'pueblo',
+  'indigenas',
+  'esperanza',
+  'electoral',
+  'presidente',
+  'ministro',
+  'colectivo',
+  'fuerza',
+  'imparcialidad',
+  'libertad',
+  'prensa',
+  'sistema',
+  'trafico',
+  'influencias',
+  'control',
+  'asesor',
+  'autoridad',
+  'vizcarra',
+  'ppk',
+  'lima',
+  'arequipa',
+  'consecuencia',
+  'decreto',
+  'moral',
+  'fujimori',
+  'religion',
 ];
 
 const WORD_COUNT_KEY = 'value';
 const WORD_KEY = 'word';
+
+// from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 export class MyWordCloud extends React.Component{
   constructor(props) {
@@ -45,6 +97,10 @@ export class MyWordCloud extends React.Component{
   }
 
   render () {
+    const words = shuffle(rawWords.map(word => ({
+      word,
+      value: Math.floor(Math.random() * 100)
+    }))).slice(20);
   return (
     <div class="container">
     <div class="row">
