@@ -28,12 +28,12 @@ export default class Home extends React.Component {
                         labores legislativas del congreso. </h2> <br /> <br />
                     <h1>
                         <span style={{ cursor: "pointer" }} onClick={e => { console.log("test") }}> 
-                        <Link to="/">Entérate</Link> </span> como puedes empoderarte!
+                        ¡<Link to="/">Entérate</Link> </span> como puedes empoderarte!
                         </h1>
                 </div>
                 <div className={"col"} key={"text2"} style={{ height: "40%", width: "40%", textAlign: "center"}}>
                     <div key={"text3"} onClick={(e) => {
-                        () => { console.log("ee"); window.location = 'https://www.facebook.com/CongresMan-2054574541523427/' }
+                        () => {console.log("ee"); window.location = 'https://www.facebook.com/CongresMan-2054574541523427/'}
                     }}> <Icons.CongresMan2 color={"blue"} /> </div>
                     <a href="https://www.facebook.com/CongresMan-2054574541523427/">Sigue a CongresManBot clickeando aquí </a>
                 </div>
