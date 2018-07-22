@@ -19,6 +19,12 @@ const words = [
   {word: 'nacion', value: 2},
   {word: 'patrimonio', value: 1},
   {word: 'valor', value: 2},
+  {word: 'metales', value: 2},
+  {word: 'beneficio', value: 1},
+  {word: 'divisas', value: 3},
+  {word: 'motivo', value: 2},
+  {word: 'dolares', value: 3},
+  {word: 'exportando', value: 2},
 ];
 
 const WORD_COUNT_KEY = 'value';
@@ -49,7 +55,7 @@ export class MyWordCloud extends React.Component{
       <div class="col-sm-1">
       </div>
     <div class="col-sm-12">
-      <div style={{width: 700, height: 600, justifyContent: "center", alignItems: "center"}}>
+      <div style={{paddingLeft: "10em", width: 700, height: 600, display: "flex", alignItems: "center"}}>
         <ReactWordCloud
         	words={words}
         	wordCountKey={WORD_COUNT_KEY}
