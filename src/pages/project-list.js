@@ -52,7 +52,7 @@ export default class ProjectList extends React.Component {
         const iconsProps = {
             style: { height: "3em", width: "3em", display: "inline-block" },
             className: "icons"
-        } 
+        }
         if (this.state.data === undefined) {
             return (
                 <div style={{ height: "100%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -71,7 +71,7 @@ export default class ProjectList extends React.Component {
                                 })}
                                 <th style={{ ...headerCellStyle, width: `5%`, wordWrap: "break-word"  }}> Vota </th>
                                 <th style={{ ...headerCellStyle, width: `5%`, wordWrap: "break-word"  }}> Comentarios </th>
-                                <th style={{ ...headerCellStyle, width: `5%`, wordWrap: "break-word"  }}> Resultados </th>                                
+                                <th style={{ ...headerCellStyle, width: `5%`, wordWrap: "break-word"  }}> Resultados </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,9 +84,9 @@ export default class ProjectList extends React.Component {
                                             {row[key]}
                                         </td>
                                     })}
-                                    <td> <div {...iconsProps}><Link to={"/"}> <Icons.Vote /></Link> </div></td>                                    
-                                    <td> <div {...iconsProps}> <Link to={"/comments"}> <Icons.Comment /></Link> </div> </td>
-                                    <td> <div {...iconsProps}><Link to={"/statistics"}> <Icons.Statistic /></Link> </div></td>                                    
+                                    <td> <div {...iconsProps}><Link to={"/"}> <Icons.Vote /></Link> </div></td>
+                                    <td> <div {...iconsProps}> <Link to={"/comments?index="+index}> <Icons.Comment /></Link> </div> </td>
+                                    <td> <div {...iconsProps}><Link to={"/statistics"}> <Icons.Statistic /></Link> </div></td>
                                 </tr>
                             })}
                         </tbody>

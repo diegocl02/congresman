@@ -97,6 +97,10 @@ export class MyWordCloud extends React.Component{
   }
 
   render () {
+    const index = window.location.href.substring(window.location.href.indexOf('index=') + 6);
+    console.log(window.location.href);
+    console.log(index);
+    Math.seedrandom(index);
     const words = shuffle(rawWords.map(word => ({
       word,
       value: Math.floor(Math.random() * 100)
