@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { RingLoader } from 'react-spinners';
+import './word.css';
 
 export class Comments extends React.Component {
   constructor(props){
@@ -33,19 +34,58 @@ export class Comments extends React.Component {
     } else {
       let comments = []
 
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 10; i++) {
 
         let children = []
 
-        children.push(<div><p><strong>{"Anonimo:"}</strong></p><p>{this.state.datacomment[i].comments}</p></div>)
+        children.push(
+          <div class="row">
+          <div class="col-sm-1">
+          <div class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></img>
+          </div>
+          </div>
 
+          <div class="col-sm-5">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+          <strong>Anonimo</strong> <span class="text-muted">commentado hace 3 dias</span>
+          </div>
+          <div class="panel-body">
+            {this.state.datacomment[i++].comments}
+          </div>
+          </div>
+          </div>
+
+          <div class="col-sm-1">
+          <div class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></img>
+          </div>
+          </div>
+
+          <div class="col-sm-5">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+          <strong>Anonimo</strong> <span class="text-muted">commentado hace 3 dias</span>
+          </div>
+          <div class="panel-body">
+            {this.state.datacomment[i].comments}
+          </div>
+          </div>
+          </div>
+        </div>
+          )
         comments.push(children)
 }
 
       return(
-        <div className="comment">
+        <div class="container">
+        <div class="row">
+        <div class="col-sm-12">
           <h2>Comentarios:</h2>
           {comments}
+        </div>
+        </div>
         </div>
       )
     }
