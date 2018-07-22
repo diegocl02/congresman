@@ -30,7 +30,8 @@
     "deploy": "bash scripts/heroku_deploy.sh",
     "build": "webpack && cpx \"static/*\" \"dist/static\" ",
     "test": "",
-    "eject": ""
+    "eject": "",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
